@@ -26,11 +26,20 @@ function ItemDetailPage() {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("items")
-        .select("*, item_images(id, url, position), profiles!items_user_id_fkey(full_name, avatar_url)")
+        .select("*, item_images(id, url, position)")
         .eq("id", id)
         .single();
       if (error) throw error;
-      return data as any;
+      let profile: any = null;
+      if (data?.user_id) {
+        const { data: p } = await supabase
+          .from("profiles")
+          .select("full_name, avatar_url")
+          .eq("id", data.user_id)
+          .maybeSingle();
+        profile = p;
+      }
+      return { ...(data as any), profiles: profile };
     },
   });
 
