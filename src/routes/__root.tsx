@@ -82,10 +82,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "FindIt — Reunite with lost belongings" },
       { name: "description", content: "A modern lost & found community. Post lost or found items, search by location, and get reunited fast." },
       { property: "og:title", content: "FindIt — Reunite with lost belongings" },
-      { property: "og:description", content: "Post lost or found items, search by location, and get reunited fast." },
+      { property: "og:description", content: "A modern lost & found community. Post lost or found items, search by location, and get reunited fast." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "FindIt — Reunite with lost belongings" },
+      { name: "twitter:description", content: "A modern lost & found community. Post lost or found items, search by location, and get reunited fast." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/f04a96d4-91ec-4cb0-a09d-5e3296282612" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/f04a96d4-91ec-4cb0-a09d-5e3296282612" },
     ],
     links: [
       {
